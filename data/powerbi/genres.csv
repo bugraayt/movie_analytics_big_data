@@ -1,0 +1,20 @@
+genre_name,movie_count,avg_rating,avg_popularity
+Action,142,6.67,48.73
+Drama,142,6.81,44.93
+Thriller,109,6.61,50.68
+Adventure,103,7.04,40.45
+Comedy,85,6.88,39.47
+Science Fiction,74,6.87,44.7
+Fantasy,63,7.14,44.67
+Romance,60,6.7,39.03
+Horror,55,6.65,61.73
+Crime,50,7.05,55.09
+Family,47,7.44,40.24
+Animation,47,7.28,41.6
+Mystery,32,6.7,60.61
+History,15,7.17,29.12
+Music,12,7.43,44.12
+War,8,7.07,21.78
+Documentary,6,6.82,32.45
+TV Movie,6,6.0,34.49
+Western,1,8.5,21.16

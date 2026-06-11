@@ -1,0 +1,299 @@
+[
+  {
+    "timestamp": "2026-06-05T03:18:46.548080",
+    "source": "now_playing",
+    "movie_id": 1339713,
+    "title": "Obsession",
+    "popularity": 653.5424,
+    "vote_average": 7.912,
+    "release_date": "2026-05-13"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548121",
+    "source": "now_playing",
+    "movie_id": 1304313,
+    "title": "Lee Cronin's The Mummy",
+    "popularity": 452.0792,
+    "vote_average": 8.052,
+    "release_date": "2026-04-15"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548130",
+    "source": "now_playing",
+    "movie_id": 1433117,
+    "title": "Kara",
+    "popularity": 451.6465,
+    "vote_average": 6.1,
+    "release_date": "2026-04-30"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548137",
+    "source": "now_playing",
+    "movie_id": 1083381,
+    "title": "Backrooms",
+    "popularity": 295.566,
+    "vote_average": 6.736,
+    "release_date": "2026-05-27"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548142",
+    "source": "now_playing",
+    "movie_id": 1380291,
+    "title": "Tom Clancy's Jack Ryan: Ghost War",
+    "popularity": 269.0824,
+    "vote_average": 7.096,
+    "release_date": "2026-05-20"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548149",
+    "source": "now_playing",
+    "movie_id": 1439930,
+    "title": "The Punisher: One Last Kill",
+    "popularity": 259.0049,
+    "vote_average": 8.37,
+    "release_date": "2026-05-12"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548153",
+    "source": "now_playing",
+    "movie_id": 1226863,
+    "title": "The Super Mario Galaxy Movie",
+    "popularity": 239.9882,
+    "vote_average": 8.12,
+    "release_date": "2026-04-01"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548157",
+    "source": "now_playing",
+    "movie_id": 1065834,
+    "title": "Kattalan",
+    "popularity": 220.0827,
+    "vote_average": 6.0,
+    "release_date": "2026-05-14"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548161",
+    "source": "now_playing",
+    "movie_id": 1007757,
+    "title": "Swapped",
+    "popularity": 220.0411,
+    "vote_average": 8.971,
+    "release_date": "2026-05-01"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548166",
+    "source": "now_playing",
+    "movie_id": 1419406,
+    "title": "The Shadow's Edge",
+    "popularity": 174.0368,
+    "vote_average": 7.585,
+    "release_date": "2025-08-16"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548169",
+    "source": "now_playing",
+    "movie_id": 1371023,
+    "title": "Chand Mera Dil",
+    "popularity": 162.5339,
+    "vote_average": 3.833,
+    "release_date": "2026-05-22"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548173",
+    "source": "now_playing",
+    "movie_id": 1430077,
+    "title": "Hokum",
+    "popularity": 160.1667,
+    "vote_average": 7.0,
+    "release_date": "2026-04-29"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548177",
+    "source": "now_playing",
+    "movie_id": 1116201,
+    "title": "Iron Lung",
+    "popularity": 154.12,
+    "vote_average": 7.206,
+    "release_date": "2026-01-30"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548181",
+    "source": "now_playing",
+    "movie_id": 1122573,
+    "title": "In the Grey",
+    "popularity": 146.5599,
+    "vote_average": 6.631,
+    "release_date": "2026-05-13"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548185",
+    "source": "now_playing",
+    "movie_id": 1228710,
+    "title": "The Mandalorian and Grogu",
+    "popularity": 132.8695,
+    "vote_average": 6.835,
+    "release_date": "2026-05-20"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548189",
+    "source": "now_playing",
+    "movie_id": 931285,
+    "title": "Mortal Kombat II",
+    "popularity": 130.1453,
+    "vote_average": 6.739,
+    "release_date": "2026-05-06"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548192",
+    "source": "now_playing",
+    "movie_id": 1367220,
+    "title": "Karuppu",
+    "popularity": 129.9259,
+    "vote_average": 7.364,
+    "release_date": "2026-05-14"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548196",
+    "source": "now_playing",
+    "movie_id": 1320660,
+    "title": "Pati Patni Aur Woh Do",
+    "popularity": 122.4753,
+    "vote_average": 7.5,
+    "release_date": "2026-05-15"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548200",
+    "source": "now_playing",
+    "movie_id": 1390300,
+    "title": "Over Your Dead Body",
+    "popularity": 114.5368,
+    "vote_average": 6.841,
+    "release_date": "2026-04-24"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548205",
+    "source": "now_playing",
+    "movie_id": 936075,
+    "title": "Michael",
+    "popularity": 102.044,
+    "vote_average": 7.582,
+    "release_date": "2026-04-22"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548212",
+    "source": "trending",
+    "movie_id": 1273221,
+    "title": "Scary Movie",
+    "popularity": 71.9313,
+    "vote_average": 5.7,
+    "release_date": "2026-06-03"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548218",
+    "source": "trending",
+    "movie_id": 1368337,
+    "title": "The Odyssey",
+    "popularity": 27.0516,
+    "vote_average": 0.0,
+    "release_date": "2026-07-15"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548223",
+    "source": "trending",
+    "movie_id": 454639,
+    "title": "Masters of the Universe",
+    "popularity": 91.1325,
+    "vote_average": 7.635,
+    "release_date": "2026-06-03"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548227",
+    "source": "trending",
+    "movie_id": 1628448,
+    "title": "Maa Behen",
+    "popularity": 4.5112,
+    "vote_average": 0.0,
+    "release_date": "2026-06-04"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548231",
+    "source": "trending",
+    "movie_id": 1327819,
+    "title": "Hoppers",
+    "popularity": 122.7852,
+    "vote_average": 8.161,
+    "release_date": "2026-03-04"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548235",
+    "source": "trending",
+    "movie_id": 1693002,
+    "title": "The Murder of Rachel Nickell",
+    "popularity": 0.5408,
+    "vote_average": 0.0,
+    "release_date": "2026-06-04"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548240",
+    "source": "trending",
+    "movie_id": 687163,
+    "title": "Project Hail Mary",
+    "popularity": 248.9187,
+    "vote_average": 8.652,
+    "release_date": "2026-03-15"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548243",
+    "source": "trending",
+    "movie_id": 1275779,
+    "title": "Disclosure Day",
+    "popularity": 58.2234,
+    "vote_average": 7.2,
+    "release_date": "2026-06-10"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548247",
+    "source": "trending",
+    "movie_id": 83533,
+    "title": "Avatar: Fire and Ash",
+    "popularity": 139.7246,
+    "vote_average": 7.547,
+    "release_date": "2025-12-17"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548250",
+    "source": "trending",
+    "movie_id": 1384758,
+    "title": "Ice Age: Boiling Point",
+    "popularity": 3.2741,
+    "vote_average": 0.0,
+    "release_date": "2027-02-04"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548254",
+    "source": "trending",
+    "movie_id": 1473878,
+    "title": "Speed Demon",
+    "popularity": 2.0691,
+    "vote_average": 0.0,
+    "release_date": "2026-05-20"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548257",
+    "source": "trending",
+    "movie_id": 1242265,
+    "title": "Fuze",
+    "popularity": 49.4802,
+    "vote_average": 6.41,
+    "release_date": "2026-03-23"
+  },
+  {
+    "timestamp": "2026-06-05T03:18:46.548261",
+    "source": "trending",
+    "movie_id": 1084244,
+    "title": "Toy Story 5",
+    "popularity": 54.0553,
+    "vote_average": 0.0,
+    "release_date": "2026-06-17"
+  }
+]
