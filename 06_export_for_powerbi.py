@@ -1,4 +1,3 @@
-# 06_export_for_powerbi.py
 # PURPOSE: Export all tables from PostgreSQL to CSV files
 # Power BI will read these CSV files to build dashboards
 

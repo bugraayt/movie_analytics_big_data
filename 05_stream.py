@@ -1,4 +1,3 @@
-# 05_stream.py
 # PURPOSE: Simulate a real-time data stream by polling the TMDB API
 # This covers the "data stream" requirement of the ingestion layer
 # In a real big data system this would be Apache Kafka or AWS Kinesis

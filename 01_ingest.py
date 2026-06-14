@@ -9,7 +9,7 @@ load_dotenv()
 API_KEY = os.getenv("TMDB_API_KEY")
 BASE_URL = "https://api.themoviedb.org/3"
 
-def fetch_movies(total_pages=20):
+def fetch_movies(total_pages=100):
     all_movies = []
     print("Fetching movies from TMDB API...")
     for page in range(1, total_pages + 1):
@@ -41,7 +41,7 @@ def fetch_movie_credits(movie_id):
         return response.json()
     return {}
 
-def enrich_movies(movies, sample_size=100):
+def enrich_movies(movies, sample_size=500):
     print(f"\nEnriching first {sample_size} movies with extra details...")
     enriched = []
     for i, movie in enumerate(movies[:sample_size]):
@@ -94,8 +94,8 @@ def show_summary(df):
     print(f"Sample titles: {list(df['title'].head(5))}")
 
 if __name__ == "__main__":
-    movies = fetch_movies(total_pages=20)
-    movies = enrich_movies(movies, sample_size=100)
+    movies = fetch_movies(total_pages=100)
+    movies = enrich_movies(movies, sample_size=500)
     df = save_data(movies)
     show_summary(df)
     print("\nAll done! Check your data/ folder.")
