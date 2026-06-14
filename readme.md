@@ -9,8 +9,7 @@ Analyze movie data to uncover insights about ratings, genres, budgets, revenue t
 
 ### 1. Data Ingestion Layer
 - `01_ingest.py` — Fetches ~400 movies from the TMDB API (JSON), saves as CSV (flat file) and Parquet (columnar)
-- `04_pdf_ingest.py` — Generates and parses a PDF report using pdfplumber
-- `05_stream.py` — Simulates a real-time data stream by polling TMDB's "now playing" and "trending" endpoints
+- `04_stream.py` — Simulates a real-time data stream by polling TMDB's "now playing" and "trending" endpoints
 
 ### 2. Data Transformation Layer
 - `02_database.py` — Loads data into PostgreSQL using a star schema:
@@ -21,19 +20,40 @@ Analyze movie data to uncover insights about ratings, genres, budgets, revenue t
 
 ### 3. Data Serving Layer
 - `03_queries.sql` / `03_run_queries.py` — 10+ analytical SQL queries
-- `06_export_for_powerbi.py` — Exports clean datasets for Power BI
+- `05_export_for_powerbi.py` — Exports clean datasets for Power BI
 - Power BI dashboard with multiple pages: ratings, genres, trends, budget vs revenue, directors
 
 ## Tech Stack
-- Python (pandas, requests, sqlalchemy, pdfplumber)
+- Python (pandas, requests, sqlalchemy)
 - PostgreSQL (star schema data warehouse)
 - Power BI (dashboards)
 
 ## Setup
 1. Clone this repo
-2. Create a `.env` file with your TMDB API key and database credentials
-3. Install dependencies: `pip install -r requirements.txt`
-4. Run scripts in order: `01_ingest.py` → `02_database.py` → `04_pdf_ingest.py` → `05_stream.py` → `06_export_for_powerbi.py`
+2. Create a `.env` file with your TMDB API key and database credentials:
+TMDB_API_KEY=your_key_here
 
-## Author
-Bugra Ayten
+DB_NAME=movies_db
+
+DB_USER=your_db_username
+
+DB_HOST=localhost
+
+DB_PORT=5432
+3. Install dependencies: `pip install -r requirements.txt`
+4. Run scripts in order:
+python 01_ingest.py
+
+python 02_database.py
+
+python 03_run_queries.py
+
+python 04_stream.py
+
+python 05_export_for_powerbi.py
+5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation
+
+## Team
+- Bugra Ayten
+- Cerenay Kuzu
+- Egehan Arslan
