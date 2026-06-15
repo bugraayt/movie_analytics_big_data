@@ -53,7 +53,11 @@ python 04_stream.py
 python 05_export_for_powerbi.py
 5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation
 
-Example Graphic Analysis with Power BI: https://app.powerbi.com/groups/me/reports/a6609a22-1cc5-40f2-8c2b-9d61e5268395?ctid=327c9d40-b385-4a76-a686-74d0b354ad47&pbi_source=linkShare&bookmarkGuid=a7951322-6511-452b-bee1-991906f8228f
+## Power BI Dashboard
+
+The interactive dashboard is available here: [Movie Analytics Dashboard](https://app.powerbi.com/groups/me/reports/a6609a22-1cc5-40f2-8c2b-9d61e5268395?ctid=327c9d40-b385-4a76-a686-74d0b354ad47&pbi_source=linkShare&bookmarkGuid=3be502bd-83a5-462d-b0f8-34bcc9a76b35)
+
+If the link requires sign-in or is unavailable, screenshots of each dashboard page are included in the `dashboard_screenshots/` folder.
 
 ## Team
 - Bugra Ayten
