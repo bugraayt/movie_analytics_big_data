@@ -53,6 +53,8 @@ python 04_stream.py
 python 05_export_for_powerbi.py
 5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation
 
+Example Graphic Analysis with Power BI: https://app.powerbi.com/groups/me/reports/a6609a22-1cc5-40f2-8c2b-9d61e5268395?ctid=327c9d40-b385-4a76-a686-74d0b354ad47&pbi_source=linkShare&bookmarkGuid=a7951322-6511-452b-bee1-991906f8228f
+
 ## Team
 - Bugra Ayten
 - Cerenay Kuzu
