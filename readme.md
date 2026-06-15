@@ -35,6 +35,7 @@ The interactive dashboard is available here: [Movie Analytics Dashboard](https:/
 ## Setup
 1. Clone this repo
 2. Create a `.env` file with your TMDB API key and database credentials:
+
 TMDB_API_KEY=your_key_here
 
 DB_NAME=movies_db
@@ -44,7 +45,9 @@ DB_USER=your_db_username
 DB_HOST=localhost
 
 DB_PORT=5432
+
 3. Install dependencies: `pip install -r requirements.txt`
+
 4. Run scripts in order:
 python 01_ingest.py
 
@@ -55,7 +58,8 @@ python 03_run_queries.py
 python 04_stream.py
 
 python 05_export_for_powerbi.py
-5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation
+
+5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation.
 
 
 ## Team
