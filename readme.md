@@ -42,6 +42,31 @@ Note: TMDB does not report budget/revenue for all movies (262/400 have this data
 - PostgreSQL (star schema data warehouse)
 - Power BI (dashboards)
 
+## Machine Learning (Bonus)
+
+`05_ml.py` trains a regression model (Random Forest) to predict a movie's
+rating (`vote_average`) using features such as budget, runtime, popularity,
+release year, language, and budget category.
+
+**First attempt** (without `vote_count`): the model explained only ~5.6% of
+the variation in ratings (R² = 0.056). This suggests that basic production
+metadata alone is a weak predictor of audience rating — movie quality
+depends heavily on factors not captured here, such as story, acting, and
+critical reception.
+
+**Second attempt** (adding `vote_count`): performance improved substantially
+(R² = 0.698, MAE = 0.589). However, `vote_count` accounted for ~77% of the
+model's predictive power. This indicates the improvement largely reflects
+that well-known, frequently-voted movies tend to have more stable and
+often higher ratings — i.e., the model is detecting popularity/longevity
+rather than identifying intrinsic "movie quality" from production stats
+alone.
+
+This comparison is presented as a finding in itself: it demonstrates that
+predicting movie quality from structured metadata is inherently limited,
+and highlights which features (runtime, popularity, budget, release year)
+have the most influence within that limitation.
+
 ## Setup
 1. Clone this repo
 
