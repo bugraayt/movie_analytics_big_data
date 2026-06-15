@@ -23,6 +23,10 @@ Analyze movie data to uncover insights about ratings, genres, budgets, revenue t
 - `05_export_for_powerbi.py` — Exports clean datasets for Power BI
 - Power BI dashboard with multiple pages: ratings, genres, trends, budget vs revenue, directors
 
+## Power BI Dashboard
+
+The interactive dashboard is available here: [Movie Analytics Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODJlMmNiMDItMmU3ZS00MDllLWEzYmEtMzdiNjBlMTUyMTkwIiwidCI6IjMyN2M5ZDQwLWIzODUtNGE3Ni1hNjg2LTc0ZDBiMzU0YWQ0NyIsImMiOjh9)
+
 ## Tech Stack
 - Python (pandas, requests, sqlalchemy)
 - PostgreSQL (star schema data warehouse)
@@ -52,10 +56,6 @@ python 04_stream.py
 
 python 05_export_for_powerbi.py
 5. Upload the CSV files from `data/powerbi/` to Power BI for dashboard creation
-
-## Power BI Dashboard
-
-The interactive dashboard is available here: [Movie Analytics Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODJlMmNiMDItMmU3ZS00MDllLWEzYmEtMzdiNjBlMTUyMTkwIiwidCI6IjMyN2M5ZDQwLWIzODUtNGE3Ni1hNjg2LTc0ZDBiMzU0YWQ0NyIsImMiOjh9)
 
 
 ## Team
