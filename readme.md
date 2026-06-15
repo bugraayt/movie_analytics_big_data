@@ -57,7 +57,6 @@ python 05_export_for_powerbi.py
 
 The interactive dashboard is available here: [Movie Analytics Dashboard](https://app.powerbi.com/view?r=eyJrIjoiODJlMmNiMDItMmU3ZS00MDllLWEzYmEtMzdiNjBlMTUyMTkwIiwidCI6IjMyN2M5ZDQwLWIzODUtNGE3Ni1hNjg2LTc0ZDBiMzU0YWQ0NyIsImMiOjh9)
 
-If the link requires sign-in or is unavailable, screenshots of each dashboard page are included in the `dashboard_screenshots/` folder.
 
 ## Team
 - Bugra Ayten
