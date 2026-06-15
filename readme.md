@@ -82,6 +82,12 @@ DB_USER=your_db_username
 DB_HOST=localhost
 
 DB_PORT=5432
+
+## .venv virtual environment creation
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+
 3. Install dependencies: `pip install -r requirements.txt`
 
 4. Run scripts in order:
