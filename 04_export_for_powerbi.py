@@ -1,5 +1,8 @@
-# PURPOSE: Export all tables from PostgreSQL to CSV files
-# Power BI will read these CSV files to build dashboards
+#DATA SERVING LAYER
+#
+# Exports pre-aggregated, analysis-ready tables from PostgreSQL
+# as CSV files for use in Power BI dashboards.
+
 
 import pandas as pd
 from sqlalchemy import create_engine, text
@@ -18,7 +21,9 @@ engine = create_engine(ENGINE_URL)
 
 os.makedirs("data/powerbi", exist_ok=True)
 
+
 def export_table(query, filename, label):
+    """Runs a SQL query and saves the result as a CSV in data/powerbi/."""
     with engine.connect() as conn:
         df = pd.read_sql(text(query), conn)
     path = f"data/powerbi/{filename}"
@@ -26,10 +31,12 @@ def export_table(query, filename, label):
     print(f"Exported {label}: {len(df)} rows → {path}")
     return df
 
+
 if __name__ == "__main__":
     print("Exporting data for Power BI...\n")
 
-    # Main movies table with all details
+    # Main movies table — joined with dim_date to include the 'decade'
+    # column, used across multiple dashboard pages
     export_table("""
         SELECT
             f.movie_id,
@@ -55,7 +62,9 @@ if __name__ == "__main__":
         LEFT JOIN dim_date d ON f.date_id = d.date_id
     """, "movies.csv", "movies")
 
-    # Genre breakdown
+    # Genre breakdown — one row per genre with counts and averages.
+    # Note: a movie can belong to multiple genres, so movie_count totals
+    # across genres can exceed the total number of movies — expected.
     export_table("""
         SELECT
             g.genre_name,
@@ -68,7 +77,8 @@ if __name__ == "__main__":
         ORDER BY movie_count DESC
     """, "genres.csv", "genres")
 
-    # Yearly trends
+    # Yearly trends — used for the "ratings/output over time" charts.
+    # Limited to 1990+ to avoid sparse early-decade data skewing averages.
     export_table("""
         SELECT
             release_year,
@@ -83,7 +93,8 @@ if __name__ == "__main__":
         ORDER BY release_year
     """, "yearly_trends.csv", "yearly trends")
 
-    # Budget vs revenue
+    # Budget vs revenue — used for the ROI scatter chart.
+    # Only includes movies with both budget and revenue reported.
     export_table("""
         SELECT
             title,
@@ -99,7 +110,10 @@ if __name__ == "__main__":
         ORDER BY revenue DESC
     """, "budget_revenue.csv", "budget vs revenue")
 
-    # Top directors
+    # Top directors by average rating.
+    # No vote_count / movie count filters here — with enrichment covering
+    # 396/400 movies, most directors only appear once, so requiring
+    # multiple movies would exclude almost everyone.
     export_table("""
         SELECT
             director,
@@ -107,14 +121,14 @@ if __name__ == "__main__":
             ROUND(AVG(vote_average)::numeric, 2) AS avg_rating,
             ROUND(AVG(popularity)::numeric, 2) AS avg_popularity
         FROM fact_movies
-        WHERE director IS NOT NULL AND vote_count > 50
+        WHERE director IS NOT NULL
         GROUP BY director
-        HAVING COUNT(*) >= 2
         ORDER BY avg_rating DESC
         LIMIT 30
     """, "directors.csv", "directors")
 
-    # Rating categories
+    # Rating vs budget category matrix — used for the budget category
+    # breakdown chart (movie_count here is used as the chart's "count of movies")
     export_table("""
         SELECT
             rating_category,
