@@ -41,6 +41,7 @@ Note: TMDB does not report budget/revenue for all movies (262/400 have this data
 - Python (pandas, requests, SQLAlchemy)
 - PostgreSQL (star schema data warehouse)
 - Power BI (dashboards)
+- scikit-learn, matplotlib (Machine Learning)
 
 ## Machine Learning
 
