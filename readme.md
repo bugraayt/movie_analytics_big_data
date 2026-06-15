@@ -21,7 +21,7 @@ Analyze movie data to uncover insights about ratings, genres, budgets, revenue t
 ### 3. Data Serving Layer
 - `03_queries.sql` / `03_run_queries.py` — 10+ analytical SQL queries
 - `05_export_for_powerbi.py` — Exports clean datasets for Power BI
-- Power BI dashboard with multiple pages: ratings, genres, trends, budget vs revenue, directors
+- Power BI dashboard with multiple pages: ratings, genres, budget vs revenue, directors
 
 ## Power BI Dashboard
 
