@@ -42,7 +42,7 @@ Note: TMDB does not report budget/revenue for all movies (262/400 have this data
 - PostgreSQL (star schema data warehouse)
 - Power BI (dashboards)
 
-## Machine Learning (Bonus)
+## Machine Learning
 
 `05_ml.py` trains a regression model (Random Forest) to predict a movie's
 rating (`vote_average`) using features such as budget, runtime, popularity,
