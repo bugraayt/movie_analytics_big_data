@@ -1,4 +1,3 @@
-cat > README.md << 'EOF'
 # Movie Analytics System
 
 A big data analytics pipeline that ingests, transforms, and visualizes movie data to uncover insights about ratings, genres, budgets, revenue, and trends over time.
