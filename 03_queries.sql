@@ -1,4 +1,4 @@
--- 03_queries.sql
+-- SQL Queries
 -- PURPOSE: Analytical queries for the Movie Analytics System
 -- These are the end-user output queries for Layer 3
 

@@ -1,10 +1,11 @@
-# MACHINE LEARNING
+#MACHINE LEARNING
 #
 # Trains a regression model to predict a movie's rating (vote_average)
 # based on features like budget, popularity, runtime, vote_count, and genre.
 #
 # This demonstrates the optional ML extension mentioned in the project
 # spec, using the same fact_movies data already loaded into PostgreSQL.
+
 
 import pandas as pd
 import numpy as np
@@ -39,6 +40,7 @@ def load_data():
     """
     query = """
         SELECT
+            title,
             vote_average,
             popularity,
             runtime,
@@ -61,6 +63,8 @@ def load_data():
 def prepare_features(df):
     """
     Splits the data into features (X) and target (y).
+    'title' is kept separately (for displaying example predictions later)
+    but is NOT used as a model feature.
 
     Numeric features: popularity, runtime, budget, vote_count, release_year
     Categorical features: original_language, budget_category
@@ -68,11 +72,12 @@ def prepare_features(df):
     """
     df = df.dropna(subset=["release_year"])
 
+    titles = df["title"]
     X = df[["popularity", "runtime", "budget", "vote_count", "release_year",
             "original_language", "budget_category"]]
     y = df["vote_average"]
 
-    return X, y
+    return X, y, titles
 
 
 def build_pipeline():
@@ -98,13 +103,16 @@ def build_pipeline():
     return model
 
 
-def train_and_evaluate(X, y):
+def train_and_evaluate(X, y, titles):
     """
     Splits data into train/test sets, trains the model, and
     evaluates it using Mean Absolute Error (MAE) and R-squared.
+
+    titles is split alongside X and y so we can show example
+    predictions later with movie names attached.
     """
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42
+    X_train, X_test, y_train, y_test, titles_train, titles_test = train_test_split(
+        X, y, titles, test_size=0.2, random_state=42
     )
 
     model = build_pipeline()
@@ -119,7 +127,7 @@ def train_and_evaluate(X, y):
     print(f"Mean Absolute Error: {mae:.3f}  (avg. rating prediction is off by this much)")
     print(f"R² Score:            {r2:.3f}  (1.0 = perfect, 0.0 = no better than guessing average)")
 
-    return model, X_test, y_test, predictions
+    return model, X_test, y_test, titles_test, predictions
 
 
 def show_feature_importance(model, X):
@@ -129,7 +137,6 @@ def show_feature_importance(model, X):
     regressor = model.named_steps["regressor"]
     preprocessor = model.named_steps["preprocessor"]
 
-    # Get feature names after one-hot encoding
     cat_features = preprocessor.named_transformers_["cat"].get_feature_names_out(
         ["original_language", "budget_category"]
     )
@@ -144,6 +151,52 @@ def show_feature_importance(model, X):
 
     print(f"\n--- Top 10 Most Important Features ---")
     print(feature_importance_df.to_string(index=False))
+
+
+def show_example_predictions(titles_test, y_test, predictions, n=10):
+    """
+    Shows real examples: movie title, actual rating vs. predicted rating.
+    This makes the model's output concrete — instead of just an R² number,
+    we can see exactly what it predicts for specific movies.
+    """
+    examples = pd.DataFrame({
+        "title": titles_test.values,
+        "actual_rating": y_test.values,
+        "predicted_rating": predictions.round(2),
+    })
+    examples["difference"] = (examples["actual_rating"] - examples["predicted_rating"]).round(2)
+
+    print(f"\n--- Example Predictions (first {n} test movies) ---")
+    print(examples.head(n).to_string(index=False))
+
+
+def predict_new_movie(model):
+    """
+    Predicts the rating for a hypothetical new movie, given its details.
+    This demonstrates the practical use case: estimating a rating for
+    a movie before it's released, based on its planned attributes.
+
+    NOTE: vote_count=0 for a new movie since it hasn't been released yet.
+    Since vote_count was the most important feature in our model (~77%),
+    predictions for brand-new movies will lean heavily on the remaining
+    features (runtime, budget, popularity, language, year) and may
+    regress toward the average rating.
+    """
+    new_movie = pd.DataFrame([{
+        "popularity": 50.0,
+        "runtime": 120,
+        "budget": 80000000,
+        "vote_count": 0,
+        "release_year": 2026,
+        "original_language": "en",
+        "budget_category": "High"
+    }])
+
+    predicted_rating = model.predict(new_movie)[0]
+
+    print(f"\n--- Predicting a New (Hypothetical) Movie ---")
+    print(new_movie.to_string(index=False))
+    print(f"\nPredicted rating: {predicted_rating:.2f}")
 
 
 def plot_predictions(y_test, predictions):
@@ -168,9 +221,11 @@ def plot_predictions(y_test, predictions):
 
 if __name__ == "__main__":
     df = load_data()
-    X, y = prepare_features(df)
-    model, X_test, y_test, predictions = train_and_evaluate(X, y)
+    X, y, titles = prepare_features(df)
+    model, X_test, y_test, titles_test, predictions = train_and_evaluate(X, y, titles)
     show_feature_importance(model, X)
+    show_example_predictions(titles_test, y_test, predictions)
+    predict_new_movie(model)
     plot_predictions(y_test, predictions)
 
     print("\nML model complete! Check data/ml/actual_vs_predicted.png")
